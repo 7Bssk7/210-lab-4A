@@ -7,7 +7,6 @@
 #include<iomanip>
 using namespace std;
 
-
 const int N_MAX = 50;
 const int N_MIN = 25;
 const int RGB_MAX_VALUE = 255;
@@ -47,8 +46,9 @@ int randomEngine(int i, int l){
 }
 
 void outputC(const vector<Color> &c){
-    for(int i = 0; i < c.size(); ++i){
-        cout << "Color#" << i+1 << " R value " << c.at(i).red << ", " << "G value " << c.at(i).green << ", " << "B value " << c.at(i).blue << endl;
-    
+    cout << setw(10) << "Color#" << setw(10) << "R value" << setw(10) << "G value" << setw(10) << "B value" << endl;
+    cout << setw(10) << "------" << setw(10) << "-------" << setw(10) << "-------" << setw(10) << "-------" << endl;
+    for (int i = 0; i < c.size(); ++i){
+        cout << setw(8) << i+1 << setw(10) << c.at(i).red << setw(10) << c.at(i).green << setw(11) << c.at(i).blue << endl;
     }
 }
