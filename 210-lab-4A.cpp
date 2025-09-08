@@ -7,6 +7,12 @@
 #include<iomanip>
 using namespace std;
 
+
+const int N_MAX = 50;
+const int N_MIN = 25;
+const int RGB_MAX_VALUE = 255;
+const int RGB_MIN_VALUE = 0;
+
 struct Color{
     int red,green,blue;
 };
@@ -16,15 +22,15 @@ void outputC(const vector<Color> &c);
 
 int main(){
     vector<Color> colors;
-    int n = randomEngine(25,50);
-
+    int n = randomEngine(N_MIN,N_MAX);
     colors.resize(n);
 
     for(int i = 0; i < colors.size(); ++i){
-        colors.at(i).red = randomEngine(0,255);
-        colors.at(i).green = randomEngine(0,255);
-        colors.at(i).blue = randomEngine(0,255);
+        colors.at(i).red = randomEngine(RGB_MIN_VALUE,RGB_MAX_VALUE);
+        colors.at(i).green = randomEngine(RGB_MIN_VALUE,RGB_MAX_VALUE);
+        colors.at(i).blue = randomEngine(RGB_MIN_VALUE,RGB_MAX_VALUE);
     }
+    outputC(colors);
 
     return 0;
 }
@@ -38,4 +44,11 @@ int randomEngine(int i, int l){
     num = distribution(generator);
 
     return num;
+}
+
+void outputC(const vector<Color> &c){
+    for(int i = 0; i < c.size(); ++i){
+        cout << "Color#" << i+1 << " R value " << c.at(i).red << ", " << "G value " << c.at(i).green << ", " << "B value " << c.at(i).blue << endl;
+    
+    }
 }
