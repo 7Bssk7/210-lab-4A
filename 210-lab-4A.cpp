@@ -38,7 +38,7 @@ int main(){
 }
 
 //randomEngine generates a random integers between i(first number) and l(last number)
-//arguments: i(first number) and l(last number), these numberes limit the range of the generated numbers
+//arguments: i(first number) and l(last number), these numbers limit the range of the generated numbers
 //return: A random generated integer in range from i(first number) to l(last number) 
 int randomEngine(int i, int l){
     int num;
